@@ -824,13 +824,45 @@
                 <div class="sent-message">Your message has been sent. Thank you!</div>
               </div>
               <div class="text-center"><button type="submit">Send Message</button></div>
-            </form>
+            </form> -->
+
+            <form id="salsa" method="POST" accept-charset="utf-8">
+              <center>
+              <label>Your Number</label><input placeholder="62812xxxx" name="nomer" type="number" id="nomer" required/>
+            <br>
+            <label>Your Name</label><input placeholder="nama" name="nama" type="text" id="nama" required/>
+            <br>
+              <label>Message</label><textarea rows="4" id="pesan" name="pesan" placeholder="pesan"></textarea>
+              <br>
+              <br>
+              <button type="submit" id="btn-kirim" >Kirim</button>
+              </center>
+          </form>
+          
+          <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+          
+          <script>
+          $("#btn-kirim").click(function(){
+          $.ajax({
+              url: "proses.php",
+              type: "post",
+              data: $('#salsa').serialize(),
+              success: function (response) {
+                  alert(response);
+              },
+              error: function(jqXHR, textStatus, errorThrown) {
+                 console.log(textStatus, errorThrown);
+              }
+          });
+          return false;
+          });
+          </script>
 
           </div>
 
         </div>
 
-      </div> -->
+      </div>
     </section><!-- End Contact Section -->
 
   </main><!-- End #main -->
