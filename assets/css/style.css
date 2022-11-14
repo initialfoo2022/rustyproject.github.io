@@ -1656,6 +1656,16 @@ section {
 /*--------------------------------------------------------------
 # Contact
 --------------------------------------------------------------*/
+.tombol_contact_us {
+  position: fixed;
+  right: 10px;
+  bottom: 44px;
+}
+.tombol_contact_us img {
+  height: 44px;
+  width: auto;
+}
+
 .contact .info {
   width: 100%;
   background: #fff;
